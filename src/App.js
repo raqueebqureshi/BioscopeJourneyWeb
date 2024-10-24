@@ -282,7 +282,7 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
   {[
-    { name: 'Culture', img: '/culture.png' },
+    { name: 'Culture', img: '/culture.jpeg' },
     { name: 'Wildlife', img: '/wildlife.jpeg' },
     { name: 'Tour Plans', img: '/tour_plans.jpeg' },
     { name: 'Celebrations', img: '/celebrations.jpeg' },
@@ -316,33 +316,38 @@ export default function HomePage() {
     </>
 
       {/* Special Interest Section */}
-      <div className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-2xl font-bold text-yellow-400 mb-6 transition-colors duration-300 hover:text-yellow-500">Delhi Travel Itinerary</h2>
+   <div className="py-12 bg-white">
+  <div className="max-w-7xl mx-auto text-center">
+    <h2 className="text-2xl font-bold text-yellow-400 mb-6 transition-colors duration-300 hover:text-yellow-500">
+      Delhi Travel Itinerary
+    </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {days.map((day, index) => (
-            <div
-              key={index}
-              className="relative p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-            >
-              <h3 className="text-lg font-bold text-yellow-400 mb-2">{day.title}</h3>
-              <p className="text-gray-800">{day.description}</p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {days.map((day, index) => (
+        <div
+          key={index}
+          className="relative p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 text-center" // Added text-center here
+        >
+          <h3 className="text-lg font-bold text-yellow-400 mb-2">{day.title}</h3>
+          <p className="text-gray-800 ">{day.description}</p>
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-yellow-400 opacity-0 hover:opacity-100 text-white flex items-center justify-center transition-opacity duration-300 p-2 rounded-lg">
-              <h3 className="text-lg font-bold text-white-400 mb-2">{day.title}</h3>
-              <p className="text-gray-800">{day.description}</p>
-              </div>
+          {/* Hover overlay */}
+          <div className="absolute inset-0 bg-yellow-500 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-center p-4 rounded-lg">
+            <div className="text-white text-center"> {/* Center align text in overlay */}
+              <h3 className="text-lg font-bold mb-2">{day.title}</h3>
+              <p className="text-sm">{day.description}</p>
             </div>
-          ))}
+          </div>
         </div>
-
-        <button className="mt-6 bg-yellow-400 text-white px-4 py-2 rounded-md hover:bg-yellow-500">
-          Discover More
-        </button>
-      </div>
+      ))}
     </div>
+
+    <button className="mt-6 bg-yellow-400 text-white px-6 py-3 rounded-md hover:bg-yellow-500 transition duration-300">
+      Discover More
+    </button>
+  </div>
+</div>
+
 
       {/* Contact Section */}
       <div id="contact" className="bg-gradient-to-b from-gray-100 to-white py-12">
